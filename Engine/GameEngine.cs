@@ -62,15 +62,27 @@ namespace MathGame.Engine
             return result;
         }
 
+        public void GenerateValidDivisionNumbers()
+        {
+            int num1, num2;
+            do
+            {
+                num1 = RandomNumberGenerator();
+                num2 = RandomNumberGenerator();
+                if (num1 < num2)
+                {
+                    int temp = num1;
+                    num1 = num2;
+                    num2 = temp;
+                }
+            } while (num2 == 0 || num1 % num2 != 0);
+            this.NumRandom1 = num1;
+            this.NumRandom2 = num2;
+        }
+
         public int Division()
         {
-            int divisor = this.NumRandom1;
-            int result = this.NumRandom2;
-
-            int final = divisor * result;
-
-            return final;
-            
+            return this.NumRandom1 / this.NumRandom2;
         }
 
 
