@@ -38,8 +38,22 @@ namespace MathGame.Engine
 
         public int Subtraction()
         {
-            int result = this.NumRandom1 - this.NumRandom2;
-            return result;
+            int num3;
+            if (this.NumRandom1 < this.NumRandom2)
+            {
+                num3 = this.NumRandom1;
+                this.NumRandom1 = this.NumRandom2;
+                this.NumRandom2 = num3;
+
+                int result = this.NumRandom1 - this.NumRandom2;
+                return result;
+
+            }
+            else
+            {
+                int result = this.NumRandom1 - this.NumRandom2;
+                return result;
+            }
         }
 
         public int Multiplication()

@@ -20,7 +20,7 @@ do
     
     Console.WriteLine("______________________________");
     Console.WriteLine("");
-    Console.WriteLine("Your Choice: ");
+    Console.Write("Your Choice: ");
     choice = int.Parse(Console.ReadLine());
 
     switch (choice)
@@ -53,17 +53,45 @@ do
 
             break;
         case 2:
-            Console.WriteLine("Solve the sun: ");
+            Console.WriteLine("Solve the Subtraction: ");
             GameEngine gameSub = new GameEngine();
             int numSub1 = gameSub.NumRandom1;
             int numSub2 = gameSub.NumRandom2;
-            Console.WriteLine(numSub1 + " + " + numSub2 + " =");
+                
+                Console.WriteLine(numSub1 + " - " + numSub2 + " =");
+                Console.Write("Your Answer: ");
+                int answerSub = int.Parse(Console.ReadLine());
+                int subtraction = gameSub.Subtraction();
+                if (answerSub != subtraction)
+                {
+                    Console.WriteLine("Wrong! The correct answer is: " + subtraction);
+                    Console.WriteLine("");
+                    Console.WriteLine("______________________________");
+
+
+                }
+                else
+                {
+                    Console.WriteLine("You Got It Right! The answer is: " + subtraction);
+                    Console.WriteLine("");
+                    Console.WriteLine("______________________________");
+
+
+                }
+            
+            break;
+        case 3:
+            Console.WriteLine("Solve the Multiplication: ");
+            GameEngine gameMult = new GameEngine();
+            int numMult1 = gameMult.NumRandom1;
+            int numMult2 = gameMult.NumRandom2;
+            Console.WriteLine(numMult1 + " * " + numMult2 + " =");
             Console.Write("Your Answer: ");
-            int answerSub = int.Parse(Console.ReadLine());
-            int subtraction = gameSub.Subtraction();
-            if (answerSub != subtraction)
+            int answerMult = int.Parse(Console.ReadLine());
+            int multiplication = gameMult.Multiplication();
+            if (answerMult != multiplication)
             {
-                Console.WriteLine("Wrong! The correct answer is: " + subtraction);
+                Console.WriteLine("Wrong! The correct answer is: " + multiplication);
                 Console.WriteLine("");
                 Console.WriteLine("______________________________");
 
@@ -71,7 +99,7 @@ do
             }
             else
             {
-                Console.WriteLine("You Got It Right! The answer is: " + subtraction);
+                Console.WriteLine("You Got It Right! The answer is: " + multiplication);
                 Console.WriteLine("");
                 Console.WriteLine("______________________________");
 
@@ -79,6 +107,7 @@ do
             }
 
             break;
+
 
     }
 
