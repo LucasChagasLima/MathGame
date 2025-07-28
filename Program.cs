@@ -52,6 +52,33 @@ do
             }
 
             break;
+        case 2:
+            Console.WriteLine("Solve the sun: ");
+            GameEngine gameSub = new GameEngine();
+            int numSub1 = gameSub.NumRandom1;
+            int numSub2 = gameSub.NumRandom2;
+            Console.WriteLine(numSub1 + " + " + numSub2 + " =");
+            Console.Write("Your Answer: ");
+            int answerSub = int.Parse(Console.ReadLine());
+            int subtraction = gameSub.Subtraction();
+            if (answerSub != subtraction)
+            {
+                Console.WriteLine("Wrong! The correct answer is: " + subtraction);
+                Console.WriteLine("");
+                Console.WriteLine("______________________________");
+
+
+            }
+            else
+            {
+                Console.WriteLine("You Got It Right! The answer is: " + subtraction);
+                Console.WriteLine("");
+                Console.WriteLine("______________________________");
+
+
+            }
+
+            break;
 
     }
 
